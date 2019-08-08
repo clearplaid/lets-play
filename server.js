@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const routes = require("./routes");
@@ -5,6 +6,11 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 const server = require('http').createServer(app);
 const io = require('socket.io')(server);
+const session = require("express-session");
+// const corsOptions = {
+//   origin: process.env.ORIGIN_URL || "http://localhost",
+//   optionsSuccessStatus: 200
+// }
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -15,7 +21,12 @@ if (process.env.NODE_ENV === "production") {
 }
 
 app.use(express.bodyParser());
-  
+app.use(session({
+  secret: process.env.REACT_APP_SESSION_SECRET,
+  resave: false,
+  saveUninitialized: true
+}));
+
 app.use(passport.initialize());
 app.use(passport.session());
 
