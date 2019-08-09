@@ -7,6 +7,7 @@ const app = express();
 const server = require('http').createServer(app);
 const io = require('socket.io')(server);
 const session = require("express-session");
+const passport = require("passport");
 // const corsOptions = {
 //   origin: process.env.ORIGIN_URL || "http://localhost",
 //   optionsSuccessStatus: 200
@@ -20,7 +21,6 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-app.use(express.bodyParser());
 app.use(session({
   secret: process.env.REACT_APP_SESSION_SECRET,
   resave: false,
@@ -36,9 +36,9 @@ app.use(routes);
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/gamerdb", { useNewUrlParser: true });
 
-// app.listen(PORT, () => {
-//   console.log(`🌎 ==> API server now on port ${PORT}!`);
-// });
+app.listen(PORT, () => {
+  console.log(`🌎 ==> API server now on port ${PORT}!`);
+});
 
-io.on('connection', () => { /* … */ });
-server.listen(PORT);
+// io.on('connection', () => { /* … */ });
+// server.listen(PORT);

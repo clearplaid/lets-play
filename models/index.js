@@ -1,4 +1,6 @@
 module.exports = {
+  User: require("./user"),
   Game: require("./game"),
-  User: require("./user")
+  Guild: require("./guild"),
+  Message: require("./friendMessage"),
 };
