@@ -1,0 +1,13 @@
+
+h2 {
+  font-family: 'Homemade Apple', cursive;
+  color: rgb(230, 230, 184);
+}
+#search {
+  padding:3rem;
+  background-color: purple;
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+  opacity: 0.3;
+}

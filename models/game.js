@@ -15,7 +15,7 @@ const gameSchema = new Schema({
   image: String,
   link: String,
   mechanics: [String],
-  category: [String]
+  categories: [String]
 });
 
 const Game = mongoose.model("Game", gameSchema);

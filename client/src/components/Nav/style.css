@@ -1,0 +1,14 @@
+
+.link {
+  padding: 1rem;
+  color:lightgoldenrodyellow;
+}
+.links {
+  display: flex;
+  justify-content: flex-end;
+  
+}
+h1 {
+  font-family: 'Rock Salt', cursive;
+  color: purple;
+}

@@ -1,0 +1,10 @@
+footer {
+  border-top: 5px solid #cca5cc;
+  background-color: #6c757d;
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+}
+a{
+  color: purple;
+}

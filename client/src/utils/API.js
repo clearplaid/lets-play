@@ -1,16 +1,13 @@
 import axios from "axios";
 
-const API_KEY = process.env.REACT_APP_BGA_API_KEY;
-
 export default {
   // Gets all Games
   getGames: function() {
     return axios.get("/api/games");
   },
-  // finds all Games with searched title from google Games
+  // finds all Games with searched title from bga Games
   searchGames: function (title) {
-    // let gameTitle = inputTitle.replace(/\s/g, "+");
-    return axios.get("https://www.boardgameatlas.com/api/search?name=" + title + "&client_id=" + API_KEY);
+    return axios.post("/api/games", {title: title});
   },
   // Saves a Game to the database
   saveGame: function(gameData) {
