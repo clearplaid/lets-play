@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const gamesController = require("../../controllers/gamesController");
 const KEY = process.env.REACT_APP_BGA_CLIENT_ID;
-
+console.log("I'm Here!")
 // Matches with "/api/games"
 router.route("/")
   // return all saved games as JSON
@@ -15,18 +15,4 @@ router.route("/:id")
   // delete a game from the database by DB id
   .delete(gamesController.remove);
 
-  // Matches with "/api/games/search"
-router.route("/search")
-  searchGames: (title) => {
-  let gameTitle = req.body.title;
-    axios.get("https://www.boardgameatlas.com/api/search?name=" + gameTitle + "&client_id=" + KEY
-    ).then(
-      (response) => {
-          res.json(response.data.games)
-      }
-    ).catch(
-      (err) => {
-          res.json({error: error})
-      });
-  }
 module.exports = router;

@@ -7,7 +7,7 @@ export default {
   },
   // finds all Games with searched title from bga Games
   searchGames: function (title) {
-    return axios.post("/api/games", {title: title});
+    return axios.post("/search/:name", {title: title});
   },
   // Saves a Game to the database
   saveGame: function(gameData) {

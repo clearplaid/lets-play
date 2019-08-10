@@ -24,8 +24,8 @@ class Search extends React.Component {
     API.searchGames(title)
       .then(
         (response) => {
-          console.log(response.data.games)
-          this.setState({ title: "", gameData: response.data.games })
+          console.log(response)
+          this.setState({ title: "", gameData: response.data })
       }
     )
   }
