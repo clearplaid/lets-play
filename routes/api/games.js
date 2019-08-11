@@ -1,7 +1,6 @@
 const router = require("express").Router();
 const gamesController = require("../../controllers/gamesController");
-const KEY = process.env.REACT_APP_BGA_CLIENT_ID;
-console.log("I'm Here!")
+
 // Matches with "/api/games"
 router.route("/")
   // return all saved games as JSON

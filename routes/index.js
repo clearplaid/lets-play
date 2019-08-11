@@ -9,7 +9,6 @@ const KEY = process.env.REACT_APP_BGA_API_KEY;
 router.use("/api", apiRoutes);
 
 router.use(function searchGames(req, res) {
-    console.log("body " + JSON.stringify(req.body))
     let gameTitle = req.body.title;
       axios.get("https://www.boardgameatlas.com/api/search?name=" + gameTitle + "&client_id=" + KEY
       ).then(
