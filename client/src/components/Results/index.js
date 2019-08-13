@@ -3,10 +3,10 @@ import SearchResults from "../SearchResults";
 import "./style.css";
 
 function Results(props) {
-  if(props.path === "/") {
+  if(props.path === "/search") {
     return(
         <div id="results">
-            <h3>Search Results:</h3>
+            <h3>Adventure Results:</h3>
             {props.gameData.map((game) => {
               return <SearchResults
                 id={game.id}

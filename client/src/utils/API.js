@@ -7,7 +7,7 @@ export default {
   },
   // finds all Games with searched title from bga Games
   searchGames: function (title) {
-    return axios.post("/search/:name", {title: title});
+    return axios.post("/search", {title: title});
   },
   // Saves a Game to the database
   saveGame: function(gameData) {
@@ -16,5 +16,10 @@ export default {
   // Deletes the Game with the given id
   deleteGame: function(id) {
     return axios.delete("/api/games/" + id);
-  }
+  },
+  // get popular games to render on home page
+  getPopular: function (popular) {
+    return axios.post("/search/popular", popular);
+  },
+  
 };

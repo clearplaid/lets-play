@@ -9,8 +9,10 @@ function Nav() {
         <h1>Shuffle and Shake</h1>
         </a>
         <div className="links">
-          <a href="/" className="link">Search Games</a>
-          <a href="/login"className="link">Log In</a>
+          <a href="/" className="link">Home</a>
+          <a href="/profile" className="link">Profile</a>
+          <a href="/guild" className="link">Guild</a>
+          <a href="/search"className="link">Search</a>
         </div>
       </div>
     </nav>

@@ -4,6 +4,8 @@ import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import Search from "./pages/Search";
 import Profile from "./pages/Profile";
+import Guild from "./pages/Guild";
+import Home from "./pages/Home";
 // import LogIn from "./pages/LogIn";
 import "./App.css";
 
@@ -15,8 +17,10 @@ function App() {
       <div>
         <Nav />
         <Switch>
-          <Route exact path="/" component={Search} />
+          <Route exact path="/" component={Home} />
+          <Route exact path="/search" component={Search} />
           <Route exact path="/profile" component={Profile} />
+          <Route exact path="/guild" component={Guild} />
         </Switch>
         <Footer />
       </div>

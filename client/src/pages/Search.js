@@ -1,5 +1,5 @@
 import React from "react";
-import Form from "../components/Form";
+import GameSearchForm from "../components/GameSearchForm";
 import Results from "../components/Results";
 import API from "../utils/API";
 
@@ -33,7 +33,7 @@ class Search extends React.Component {
   render() {
     return (
       <main>
-        <Form handleChange={this.handleChange} handleSearch={this.handleSearch} />
+        <GameSearchForm handleChange={this.handleChange} handleSearch={this.handleSearch} />
 
         {(this.state.gameData.length > 0) ?
           <Results gameData={this.state.gameData} path={this.props.match.path} /> : null

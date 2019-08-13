@@ -2,7 +2,7 @@ import React from "react";
 import "./style.css";
 // This file exports the search form for finding the games we want from google books
 
-function Form(props) {
+function GameSearchForm(props) {
   return(
     <div id="search">
       <div className="row">
@@ -26,4 +26,4 @@ function Form(props) {
     </div>
   )
 }
-export default Form;
+export default GameSearchForm;

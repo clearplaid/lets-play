@@ -5,6 +5,7 @@ const userRoutes = require("./users");
 const friendMessageRoutes = require("./friendMessages");
 const guildMessageRoutes = require("./guildMessages");
 
+
 // Game routes
 router.use("/games", gameRoutes);
 // Guild routes
@@ -15,5 +16,6 @@ router.use("/users", userRoutes);
 router.use("/friendmessages", friendMessageRoutes);
 // Guild Message routes
 router.use("/guildmessages", guildMessageRoutes);
+
 
 module.exports = router;

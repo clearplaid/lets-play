@@ -32,7 +32,7 @@ class SearchResults extends React.Component {
       mechanics: this.props.mechanics,
       categories: this.props.categories
     }
-    API.saveBook(gameData).then(
+    API.saveGame(gameData).then(
       (response) => {
         console.log(response);
       }
@@ -59,35 +59,44 @@ class SearchResults extends React.Component {
   }
   render() {
     return (
-      <div className="searchResult" id={(this.props.id) ? this.props.id : null} style={{ display: this.state.deleted ? "none" : "block" }}>
-        <div className="wrapper">
-          <div className="row">
-            <div className="aboutGame">
-              <h4>{this.props.name}</h4>
-
-            </div>
-          </div>
-
-          <div className="row gameRowInfo">
-            <div className="col-sm-3">
-              {(this.props.thumbnail) ? <img src={
-                // if thumbnail exists on this.props.img use that else leave src empty
-                (this.props.thumbnail) ? this.props.image : ""
-              } alt="book cover" /> : null}
-              <div className="btnDiv">
-                {// if link to book exists include View button else do not
-                  (this.props.link) ? <a href={this.props.link}><button type="button" name="view" className="view">View</button></a> : null
-                }
-                {// if this.props.path is "/" display save button else display Delete button
-                  (this.props.path === "/") ? <button type="button" name="save" onClick={this.handleSave} disabled={this.state.saved} className="save">{(this.state.saved) ? "Saved" : "Save"}</button> : <button type="button" name="Delete" onClick={this.handleDelete} disabled={this.state.deleted} className="delete">Delete</button>
-                }
+      <div className="searchResult container-fluid" id={(this.props.id) ? this.props.id : null} style={{ display: this.state.deleted ? "none" : "block" }}>
+          <div className="card d-flex flex-column mb-3">
+            <div className="row no-gutters justify-content-center">
+              <div className="col-md-4 d-flex flex-column">
+                {(this.props.thumbnail) ? <img src={
+                    // if thumbnail exists on this.props.img use that else leave src empty
+                    (this.props.thumbnail) ? this.props.image : ""
+              } alt="box cover" className="img-fluid p-4" /> : null}
+              <ul className="card-text"><small className="text-muted">
+                      <li># of players: {this.props.min_players} - {this.props.max_players}</li>
+                      <li>Minimum Age: {this.props.min_age}</li>
+                      <li>Playtime: {this.props.min_playtime} - {this.props.max_playtime} minutes</li></small>
+              </ul>
+              <div className="btnDiv mt-auto p-4">
+                  {// if link to book exists include View button else do not
+                    (this.props.link) ? <a href={this.props.link}><button type="button" name="view" className="view">View</button></a> : null
+                  }
+                  {// if this.props.path is "/" display save button else display Delete button
+                    (this.props.path === "/search") ? <button type="button" name="save" onClick={this.handleSave} disabled={this.state.saved} className="save">{(this.state.saved) ? "Saved" : "Save"}</button> : <button type="button" name="Delete" onClick={this.handleDelete} disabled={this.state.deleted} className="delete">Delete</button>
+                  }
                 </div>
+          {/* end of col */}
               </div>
-            <div className="col-sm-9">
-              <p>{(this.props.description) ? this.props.description : "N/A"}</p>
+              <div className="col-md-8">
+                <div className="card-body d-flex flex-column">
+                  <h4 className="card-title font-weight-bold">{this.props.name}</h4>
+                  <div className="descriptionWrapper">
+                    <p className="card-text">{(this.props.description) ? this.props.description : "N/A"}</p>
+                  </div>
+              {/* end of card body */}
+                </div>
+            {/* end of col */}
+              </div>
+          {/* end of row */}
             </div>
+        {/* end of card */}
           </div>
-        </div>
+    {/* end of searchresult */}
       </div>
     );
   }
