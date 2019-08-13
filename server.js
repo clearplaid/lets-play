@@ -22,6 +22,11 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
+app.use( (req, res, next) => {
+  console.log('req.session', req.session);
+  return next();
+});
+
 app.use(session({
   secret: process.env.REACT_APP_SESSION_SECRET,
   resave: false,

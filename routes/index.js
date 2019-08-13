@@ -15,7 +15,7 @@ router.use("/search/popular", function getPopular(req, res) {
   axios.get(query
   ).then(
     (response) => {
-      console.log("response " + JSON.stringify(response.data.games));
+      // console.log("response " + JSON.stringify(response.data.games));
       res.json(response.data.games)
     }
   ).catch(
