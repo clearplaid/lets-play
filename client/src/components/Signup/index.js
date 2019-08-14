@@ -1,18 +1,20 @@
-import React, { Component } from 'react'
-import axios from 'axios'
+import React, { Component } from 'react';
+import API from "../../utils/API";
+
+
 import "./style.css";
 
 class Signup extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
+    
     this.state = {
       firstName: '',
       lastName: '',
       username: '',
       userImage: '',
+      email: '',
       password: '',
-      confirmPassword: '',
-
       }
   }
   
@@ -27,11 +29,17 @@ handleSubmit = event => {
   console.log(this.state.username)
   event.preventDefault()
 
+  const user = {
+    firstName: this.props.firstName,
+    lastName: this.props.lastName,
+    userImage: this.props.userImage,
+    email: this.props.email,
+    username: this.props.username,
+    password: this.props.password
+    }
+
   //request to server to add a new username/password
-  axios.post('/user/', {
-    username: this.state.username,
-    password: this.state.password
-  })
+  API.userSignup(user)
     .then(response => {
       console.log(response)
       if (!response.data.errmsg) {
@@ -54,10 +62,11 @@ render() {
   return (
     <div className="signupForm d-flex flex-column">
       <h4>Become an Adventurer</h4>
-      <form>
+      <form method="/api/users" action="POST">
           <div className="form-row">
             <div className="form-group col-md-6">
               <input type="text"
+                    className="input"
                     name="firstName"
                     id="firstName"
                     placeholder="First name"
@@ -67,6 +76,7 @@ render() {
             </div>
             <div className="form-group col-md-6">
               <input type="text"
+                    className="input"
                     name="lastName"
                     id="lastName"
                     placeholder="Last name"
@@ -76,9 +86,10 @@ render() {
             </div>
           </div>
             
-          <div class="form-row">
-            <div class="form-group col-md-6">
+          <div className="form-row">
+            <div className="form-group col-md-6">
               <input type="text"
+                    className="input"
                     name="username"
                     id="username"
                     placeholder="Username"
@@ -86,8 +97,9 @@ render() {
                     value={this.state.username}
                     onChange={this.handleChange} />
             </div>
-            <div class="form-group col-md-6">
+            <div className="form-group col-md-6">
               <input type="url"
+                    className="input"
                     name="userImage"
                     id="userImage"
                     placeholder="Image URL"
@@ -97,9 +109,10 @@ render() {
             </div>
           </div>
 
-          <div class="form-row">
-            <div class="form-group col-md-6">
+          <div className="form-row">
+            <div className="form-group col-md-6">
               <input type="email"
+                    className="input"
                     name="email"
                     id="email"
                     form="signupForm"
@@ -107,8 +120,9 @@ render() {
                     value={this.state.email}
                     onChange={this.handleChange} />
             </div>
-            <div class="form-group col-md-6">
+            <div className="form-group col-md-6">
               <input type="password"
+                    className="input"
                     name="password"
                     id="password"
                     form="signupForm"

@@ -4,5 +4,9 @@
 
 .btn {
   color: white;
-  background-color: purple
+  background-color: purple;
+}
+
+.input {
+  width: 100%;
 }

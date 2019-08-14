@@ -30,7 +30,7 @@ app.use( (req, res, next) => {
 app.use(session({
   secret: process.env.REACT_APP_SESSION_SECRET,
   resave: false,
-  saveUninitialized: true
+  saveUninitialized: false
 }));
 
 app.use(passport.initialize());

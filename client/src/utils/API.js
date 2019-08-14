@@ -21,5 +21,8 @@ export default {
   getPopular: function (popular) {
     return axios.post("/search/popular", popular);
   },
+  userSignup: function (user) {
+    return axios.post("/api/users/", user);
+  }
   
 };

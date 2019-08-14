@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const usersController = require("../../controllers/usersController");
 
-
+console.log("User says what?")
 // Matches with "/api/users"
 router.route("/")
   // return all saved users as JSON
