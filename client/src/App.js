@@ -25,7 +25,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    API.getUser('/user/').then(response => {
+    API.getCurrentUser('username').then(response => {
       console.log('Get user response: ')
       console.log(response.data)
       if (response.data.user) {
@@ -44,6 +44,7 @@ class App extends Component {
       }
     })
   }
+
   updateUser = userObject => {
     this.setState(userObject)
   }
@@ -52,11 +53,18 @@ render() {
   return (
     <Router>
       <div>
-        <Nav />
+        <Nav updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
+        {/* greet user if logged in: */}
+        {this.state.loggedIn &&
+          <p>Join the party, {this.state.username}!</p>
+        }
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/signup" component={Signup} />
-          <Route exact path="/logIn" component={LogIn} />
+          <Route exact path="/logIn" render={() =>
+            <LogIn
+              updateUser={this.updateUser}
+            />} />
           <Route exact path="/search" component={Search} />
           <Route exact path="/profile" component={Profile} />
           <Route exact path="/guild" component={Guild} />

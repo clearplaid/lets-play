@@ -14,12 +14,12 @@ class Home extends React.Component {
     API.getPopular()
       .then(
         (response) => {
-          console.log(response)
+          // console.log(response)
           this.setState({ popularGames: response.data })
       }
     )
 
-    API.getUser("/user/")
+    API.getUser("users")
       .then(
         (response) => {
           console.log(response)
@@ -28,7 +28,7 @@ class Home extends React.Component {
         }
     )
 
-    API.getGuilds()
+    API.getGuilds("guilds")
       .then(
         (response) => {
           console.log(response)

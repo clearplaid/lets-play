@@ -31,15 +31,15 @@ export default {
     console.log(user);
     return axios.post("/api/users/login/", user);
   },
+  getCurrentUser: function (id) {
+    console.log("axios current user from api function")
+    console.log(id);
+    return axios.get("/api/users", id)
+  },
   getUser: function (username) {
-    console.log("axios log in user from api function")
+    console.log("axios get user from api function")
     console.log(username);
     return axios.get("/api/users", username)
-  },
-  update: function (user) {
-    console.log("axios log in user from api function")
-    console.log(user);
-    return axios.get("/users", user)
   },
   getGuilds: function () {
     return axios.post("/api/guilds");
