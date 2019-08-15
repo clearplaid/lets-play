@@ -5,7 +5,9 @@ import "./Home.css";
 
 class Home extends React.Component {
   state = {
-    popularGames: []
+    popularGames: [],
+    users: [],
+    guilds: []
   }
 
   componentDidMount() {
@@ -16,6 +18,23 @@ class Home extends React.Component {
           this.setState({ popularGames: response.data })
       }
     )
+
+    API.getUser("/user/")
+      .then(
+        (response) => {
+          console.log(response)
+          console.log(response.data)
+          this.setState({ users: response.data })
+        }
+    )
+
+    API.getGuilds()
+      .then(
+        (response) => {
+          console.log(response)
+          this.setState({ users: response.data })
+        }
+  )
   }
 
  
@@ -49,14 +68,18 @@ class Home extends React.Component {
             <center><h1>Guilds</h1></center>
               <div className="card">
                 <ul>
-                  <li>Guild Names</li>
+                {this.state.guilds.map(guild => (
+                  <li id={guild._id} key={guild._id}>{guild.name}</li>
+                  ))}
                 </ul>
               </div>
               
             <center><h1>Adventurers</h1></center>
               <div className="card">
                 <ul>
-                  <li>Users Names</li>
+                  {this.state.users.map(user => (
+                    <li id={user._id} key={user._id}>{user.username}</li>
+                  ))}
                 </ul>
               </div>
         {/* end of guilds col */}

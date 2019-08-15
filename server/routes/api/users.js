@@ -14,7 +14,7 @@ router.route("/login")
 
 // Matches with "/api/users"
 router.route("/")
-// return user
+// return all users
 .get(usersController.findAll)
 // save a new user to the database
 .post(usersController.create);

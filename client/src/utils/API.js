@@ -40,6 +40,9 @@ export default {
     console.log("axios log in user from api function")
     console.log(user);
     return axios.get("/users", user)
+  },
+  getGuilds: function () {
+    return axios.post("/api/guilds");
   }
   
 };
