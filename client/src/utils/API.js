@@ -22,7 +22,24 @@ export default {
     return axios.post("/search/popular", popular);
   },
   userSignup: function (user) {
-    return axios.post("/api/users/", user);
+    console.log("axios sign up user from api function")
+    console.log(user);
+    return axios.post("/api/users/signup/", user);
+  },
+  userLogIn: function (user) {
+    console.log("axios log in user from api function")
+    console.log(user);
+    return axios.post("/api/users/login/", user);
+  },
+  getUser: function (username) {
+    console.log("axios log in user from api function")
+    console.log(username);
+    return axios.get("/api/users", username)
+  },
+  update: function (user) {
+    console.log("axios log in user from api function")
+    console.log(user);
+    return axios.get("/users", user)
   }
   
 };

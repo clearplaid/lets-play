@@ -5,13 +5,14 @@
   "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && yarn run start:prod || yarn run start:dev",
-    "start:prod": "node server.js",
-    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"yarn run client\"",
+    "start:prod": "node server/server.js",
+    "start:dev": "concurrently \"nodemon server/server.js --ignore 'client/*'\" \"yarn run client\"",
     "client": "cd client && yarn run start",
     "install": "cd client && yarn install",
     "build": "cd client && yarn run build",
     "heroku-postbuild": "yarn run build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "api": "nodemon ./server/server.js"
   },
   "repository": "https://github.com/clearplaid/lets-play.git",
   "author": "Shannon Johnson",
@@ -28,9 +29,12 @@
     "express": "^4.17.1",
     "express-session": "^1.16.2",
     "if-env": "^1.0.4",
+    "mongo-store": "^0.0.2",
     "mongodb": "^3.3.0-beta2",
     "mongoose": "^5.6.9",
+    "morgan": "^1.9.1",
     "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
     "password": "^0.1.1",
     "socket.io": "^2.2.0"
   }
