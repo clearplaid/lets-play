@@ -31,10 +31,10 @@ export default {
     console.log(user);
     return axios.post("/api/users/login/", user);
   },
-  getCurrentUser: function (id) {
+  getCurrentUser: function (username) {
     console.log("axios current user from api function")
-    console.log(id);
-    return axios.get("/api/users", id)
+    console.log(username);
+    return axios.put("/api/users", username)
   },
   getUser: function (username) {
     console.log("axios get user from api function")

@@ -66,7 +66,10 @@ render() {
               updateUser={this.updateUser}
             />} />
           <Route exact path="/search" component={Search} />
-          <Route exact path="/profile" component={Profile} />
+          <Route path="/profile" render={() =>
+            <Profile
+              updateUser={this.updateUser}
+            />} />
           <Route exact path="/guild" component={Guild} />
         </Switch>
         <Footer />

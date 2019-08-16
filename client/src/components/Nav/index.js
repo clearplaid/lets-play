@@ -6,7 +6,7 @@ function Nav() {
     <nav className="navbar navbar-expand-lg navbar-dark bg-secondary p-4">
       <div className="container">
         <a className="navbar-brand" href="/">
-        <h1>Meeples and Peoples</h1>
+        <h1>Peoples with Meeples</h1>
         </a>
         <div className="links">
           <a href="/" className="link">Home</a>

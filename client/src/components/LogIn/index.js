@@ -38,9 +38,9 @@ class LogIn extends Component {
             loggedIn: true,
             username: response.data.username
           })
-          // update the state to redirect to home
+          // update the state to redirect to user profile
           this.setState({
-            redirectTo: '/profile'
+            redirectTo: '/profile/' + this.state.username
           })
         }
       }).catch(error => {
