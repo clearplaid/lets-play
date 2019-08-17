@@ -1,6 +1,6 @@
 import React from "react";
-import GameSearchForm from "../components/GameSearchForm";
-import Results from "../components/Results";
+import GameSearchForm from "../components/GameSearchForm/gamesearch";
+import Results from "../components/Results/results";
 import API from "../utils/API";
 
 class Search extends React.Component {

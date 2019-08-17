@@ -11,7 +11,7 @@ const userSchema = new Schema({
   email: { type: String, required: true },
   username: { type: String, unique: false, required: true },
   password: { type: String, unique: false, required: true },
-  loggedIn: 
+  loggedIn: { type: Boolean }
 });
 
 // define user schema methods

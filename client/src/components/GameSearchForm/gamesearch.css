@@ -1,0 +1,12 @@
+h2 {
+  font-family: 'Rock Salt', cursive;
+  color: black;
+}
+#search {
+  padding:3rem;
+  background-color: #9ca27b;
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+  opacity: 0.9;
+}

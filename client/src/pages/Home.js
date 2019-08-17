@@ -28,14 +28,14 @@ class Home extends React.Component {
         }
     )
 
-    API.getGuilds("guilds")
-      .then(
-        (response) => {
-          console.log(response)
-          this.setState({ users: response.data })
-        }
-  )
-  }
+  //   API.getGuilds("guilds")
+  //     .then(
+  //       (response) => {
+  //         console.log(response)
+  //         this.setState({ users: response.data })
+  //       }
+  // )
+   }
 
  
   render() {
@@ -44,19 +44,19 @@ class Home extends React.Component {
         <div className="container-fluid">
           <div className="row">
           <div className="col-sm-9">
-          <center><h1>Popular Games</h1></center>
+          <center><h2 className="main-title">Popular Games</h2></center>
             <div className="row justify-content-center"> 
               {this.state.popularGames.map(game => (
-                <div className="card" id={game.id} key={game.id} style={{ width: "15rem" }}>
-                <img src={game.images.original} className="card-img-top img-fluid pb-1" alt={game.name} />
+                <div className="card main-card" id={game.id} key={game.id} style={{ width: "15rem" }}>
+                <img src={game.images.original} className="card-img-top img-fluid img-thumbnail rounded pb-1" alt={game.name} />
                 <div className="card-body d-flex flex-column p-0">
-                  <h5 className="card-title text-center font-weight-bold pb-2">{game.name}</h5>
+                  <h5 className="card-title main-card-title text-center font-weight-bold pb-2">{game.name}</h5>
                     <ul className="card-text">
                       <li># of players: {game.min_players} - {game.max_players}</li>
                       <li>Minimum Age: {game.min_age}</li>
                       <li>Playtime: {game.min_playtime} - {game.max_playtime} minutes</li>
                     </ul>
-                  <a href="{game.url}" className="btn btn-info btn-block mt-auto">More Info</a>
+                  <a href="{game.url}" className="btn infoBtn btn-block mt-auto">More Info</a>
                   </div>
               {/* end of row */}
                 </div>
@@ -64,25 +64,24 @@ class Home extends React.Component {
               {/* end of popular games column */}
               </div>
           </div>
-          <div className="col-sm-3">
-            <center><h1>Guilds</h1></center>
-              <div className="card">
-                <ul>
-                {this.state.guilds.map(guild => (
-                  <li id={guild._id} key={guild._id}>{guild.name}</li>
-                  ))}
-                </ul>
-              </div>
-              
-            <center><h1>Adventurers</h1></center>
-              <div className="card">
+          <div className="col-sm-3 sidebar">     
+            <center><h3 className="sidebar-title">Adventurers</h3></center>
+              <div className="card sidebar-card">
                 <ul>
                   {this.state.users.map(user => (
                     <li id={user._id} key={user._id}>{user.username}</li>
                   ))}
                 </ul>
               </div>
-        {/* end of guilds col */}
+            <center><h3 className="sidebar-title">Guilds</h3></center>
+              <div className="card sidebar-card">
+                <ul>
+                {this.state.guilds.map(guild => (
+                  <li id={guild._id} key={guild._id}>{guild.name}</li>
+                  ))}
+                </ul>
+              </div>
+        {/* end of sidebar col */}
             </div>
         {/* end of row */}
           </div>

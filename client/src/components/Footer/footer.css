@@ -1,0 +1,18 @@
+footer {
+  border-top: 5px solid black;
+  background-color: #6c757d;
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+}
+.page-footer {
+  background-image: url("../../images/37223.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+a{
+  color: lightgoldenrodyellow;
+}
+.footer-copyright {
+  color: #888b78
+}

@@ -2,14 +2,14 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import API from "./utils/API";
 // components
-import Nav from "./components/Nav";
+import Nav from "./components/Nav/nav";
 import Home from "./pages/Home";
-import Signup from "./components/Signup";
+import Signup from "./components/Signup/signup";
 import Profile from "./pages/Profile";
 import Guild from "./pages/Guild"
 import Search from "./pages/Search";
-import Footer from "./components/Footer";
-import LogIn from "./components/LogIn";
+import Footer from "./components/Footer/footer";
+import LogIn from "./components/LogIn/login";
 // style
 import "./App.css";
 

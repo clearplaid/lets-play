@@ -34,7 +34,7 @@ export default {
   getCurrentUser: function (username) {
     console.log("axios current user from api function")
     console.log(username);
-    return axios.put("/api/users", username)
+    return axios.get("/api/user/profile", username)
   },
   getUser: function (username) {
     console.log("axios get user from api function")
