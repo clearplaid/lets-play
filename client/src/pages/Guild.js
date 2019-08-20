@@ -6,6 +6,7 @@ class Guild extends React.Component {
     return (
       <main>
         <h2 className="guildTitle"><strong>Guild</strong></h2>
+        
       </main>
     )
   }

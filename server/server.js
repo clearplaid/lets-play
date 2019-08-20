@@ -2,8 +2,9 @@ require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const morgan = require('morgan');
+const Chatkit = require('@pusher/chatkit-server');
 const routes = require("./routes");
-const user = require('./routes/user')
+const user = require('./routes/user');
 const PORT = process.env.PORT || 3001;
 const app = express();
 // const server = require('http').createServer(app);

@@ -28,8 +28,8 @@ class App extends Component {
   componentDidMount() {
     this.getUser()
   }
-  updateUser = userObject => {
-    this.setState(userObject)
+  updateUser = user => {
+    this.setState({ username: user })
   }
     
   getUser = () => {
@@ -38,7 +38,7 @@ class App extends Component {
       console.log(response.data)
       if (response.data.user) {
         console.log('Get User: There is a user saved in the server session: ')
-
+        console.log(response.data.user)
         this.setState({
           loggedIn: true,
           username: response.data.user.username
@@ -53,7 +53,8 @@ class App extends Component {
     })
   }
 
-render() {
+  render() {
+  console.log(this.state.username)
   return (
     <Router>
       <div>

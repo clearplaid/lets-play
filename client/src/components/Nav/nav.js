@@ -45,8 +45,13 @@ logout = event => {
           {loggedIn ? (
             <section className="navbar-section">
               <Link to="/" className="btn btn-link text-secondary" onClick={this.logout}>
-                <span className="text-secondary">logout</span></Link>
-
+                <span className="nav-link">Logout</span></Link>
+              <Link to="/profile" className="list-inline-item">
+                <span className="nav-link">Profile</span></Link>
+              <Link to="/guild" className="list-inline-item">
+                <span className="nav-link">Guild</span></Link>
+              <Link to="/search" className="list-inline-item">
+                <span className="nav-link">Search</span></Link>
             </section>
           ) : (
               <ul className="navbar-nav list-inline mr-auto mt-2 mt-lg-0">
