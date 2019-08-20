@@ -21,22 +21,7 @@ export default {
   getPopular: function (popular) {
     return axios.post("/search/popular", popular);
   },
-  userSignup: function (user) {
-    console.log("axios sign up user from api function")
-    console.log(user);
-    return axios.post("/api/users/signup/", user);
-  },
-  userLogIn: function (user) {
-    console.log("axios log in user from api function")
-    console.log(user);
-    return axios.post("/api/users/login/", user);
-  },
-  getCurrentUser: function (username) {
-    console.log("axios current user from api function")
-    console.log(username);
-    return axios.get("/api/user/profile", username)
-  },
-  getUser: function (username) {
+  getAllUsers: function (username) {
     console.log("axios get user from api function")
     console.log(username);
     return axios.get("/api/users", username)

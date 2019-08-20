@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-import API from "../../utils/API";
 import "./login.css";
+import Axios from 'axios';
 
 class LogIn extends Component {
   constructor() {
@@ -24,11 +24,10 @@ class LogIn extends Component {
     event.preventDefault()
     console.log('handleSubmit')
 
-    API
-      .userLogIn('/user/login', {
-        username: this.state.username,
-        password: this.state.password
-      })
+    Axios.post('user/login', {
+      username: this.state.username,
+      password: this.state.password
+    })
       .then(response => {
         console.log('login response: ')
         console.log(response)

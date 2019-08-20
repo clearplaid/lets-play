@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import API from "./utils/API";
+// import API from "./utils/API";
+import Axios from 'axios';
 // components
 import Nav from "./components/Nav/nav";
 import Home from "./pages/Home";
@@ -25,7 +26,14 @@ class App extends Component {
   }
 
   componentDidMount() {
-    API.getCurrentUser('username').then(response => {
+    this.getUser()
+  }
+  updateUser = userObject => {
+    this.setState(userObject)
+  }
+    
+  getUser = () => {
+    Axios.get('/user/').then(response => {
       console.log('Get user response: ')
       console.log(response.data)
       if (response.data.user) {
@@ -39,14 +47,10 @@ class App extends Component {
         console.log('Get user: no user');
         this.setState({
           loggedIn: false,
-          username: null
+          username: ''
         })
       }
     })
-  }
-
-  updateUser = userObject => {
-    this.setState(userObject)
   }
 
 render() {
@@ -70,7 +74,10 @@ render() {
             <Profile
               updateUser={this.updateUser}
             />} />
-          <Route exact path="/guild" component={Guild} />
+          <Route exact path="/guild" render={() =>
+            <Guild
+              updateUser={this.updateUser}
+            />} />
         </Switch>
         <Footer />
       </div>

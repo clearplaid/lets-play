@@ -19,7 +19,7 @@ class Home extends React.Component {
       }
     )
 
-    API.getUser("users")
+    API.getAllUsers("users")
       .then(
         (response) => {
           console.log(response)

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-import API from "../../utils/API";
+// import API from "../../utils/API";
 import "./signup.css";
+import Axios from 'axios';
 
 class Signup extends Component {
   constructor() {
@@ -39,7 +40,9 @@ class Signup extends Component {
     }
     console.log(user);
     //request to server to add a new username/password
-    API.userSignup(user)
+    Axios.post('/user/', {
+      user: user
+    })
       .then(response => {
         console.log(response)
         if (!response.data.errmsg) {
@@ -56,7 +59,6 @@ class Signup extends Component {
 
       })
   }
-
 
   render() {
     if (this.state.redirectTo) {

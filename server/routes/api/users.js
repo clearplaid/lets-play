@@ -1,5 +1,7 @@
 const router = require("express").Router();
 const usersController = require("../../database/controllers/usersController");
+const passport = require("passport");
+// const LocalStrategy = require('passport-local').Strategy
 
 console.log("User says what?")
 
@@ -7,19 +9,6 @@ console.log("User says what?")
 router.route("/")
 // return all users
 .get(usersController.findAll)
-// save a new user to the database
-.post(usersController.create);
-
-
-// Matches with "/api/users/signup"
-router.route("/signup")
-  // save a new user to the database
-  .post(usersController.create);
-
-// Matches with "/api/users/login"
-router.route("/login")
-  // save a new user to the database
-  .post(usersController.findOne);
 
 // Matches with "/api/users/:id"
 router.route("/:id")

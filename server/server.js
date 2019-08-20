@@ -3,12 +3,12 @@ const express = require("express");
 const mongoose = require("mongoose");
 const morgan = require('morgan');
 const routes = require("./routes");
+const user = require('./routes/user')
 const PORT = process.env.PORT || 3001;
 const app = express();
-const server = require('http').createServer(app);
+// const server = require('http').createServer(app);
 // const io = require('socket.io')(server);
 const session = require("express-session");
-// const MongoStore = require('connect-mongo')(session)
 const passport = require("passport");
 const corsOptions = {
   origin: process.env.ORIGIN_URL || "http://localhost",
@@ -41,6 +41,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Add routes, both API and view
+app.use('/user', user)
 app.use(routes);
 
 // Connect to the Mongo DB
