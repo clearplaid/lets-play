@@ -26,6 +26,11 @@ export default {
     console.log(username);
     return axios.get("/api/users", username)
   },
+  getUserData: function (username) {
+    console.log("axios get user from api function")
+    console.log(username);
+    return axios.get("/api/users/profile", username)
+  },
   getGuilds: function () {
     return axios.post("/api/guilds");
   }

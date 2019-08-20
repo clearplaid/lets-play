@@ -3,7 +3,7 @@ const profileController = require("../../database/controllers/profileController"
 
 // Matches with "/api/profile"
 router.route("/")
-// return all profile
+// return 1 profile
 .get(profileController.findOne)
 // save a new profile to the database
 .post(profileController.create);

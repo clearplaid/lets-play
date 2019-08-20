@@ -21,40 +21,43 @@ class App extends Component {
     super()
     this.state = {
       loggedIn: false,
-      username: ''
+      username: '',
+      userId: ''
     }
   }
 
   componentDidMount() {
     this.getUser()
   }
-  updateUser = user => {
-    this.setState({ username: user })
-  }
     
   getUser = () => {
     Axios.get('/user/').then(response => {
-      console.log('Get user response: ')
-      console.log(response.data)
       if (response.data.user) {
         console.log('Get User: There is a user saved in the server session: ')
         console.log(response.data.user)
         this.setState({
           loggedIn: true,
-          username: response.data.user.username
+          username: response.data.user.username,
+          userId: response.data.user._id
         })
       } else {
         console.log('Get user: no user');
         this.setState({
           loggedIn: false,
-          username: ''
+          username: '',
+          userId: ''
         })
       }
     })
   }
 
+  updateUser = userObject => {
+    console.log(userObject)
+    this.setState(userObject)
+  }
+
   render() {
-  console.log(this.state.username)
+  console.log(this.state.userId)
   return (
     <Router>
       <div>
@@ -64,21 +67,15 @@ class App extends Component {
           <p>Join the party, {this.state.username}!</p>
         }
         <Switch>
-          <Route exact path="/" component={Home} />
+        <Route exact path="/" component={Home} />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/logIn" render={() =>
-            <LogIn
-              updateUser={this.updateUser}
-            />} />
+            <LogIn updateUser={this.updateUser} />} />
           <Route exact path="/search" component={Search} />
           <Route path="/profile" render={() =>
-            <Profile
-              updateUser={this.updateUser}
-            />} />
+            <Profile updateUser={this.updateUser} />} />
           <Route exact path="/guild" render={() =>
-            <Guild
-              updateUser={this.updateUser}
-            />} />
+            <Guild updateUser={this.updateUser} />} />
         </Switch>
         <Footer />
       </div>
