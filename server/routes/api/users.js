@@ -10,13 +10,14 @@ router.route("/")
 // return all users
 .get(usersController.findAll)
 
+router.route("/profile")
+// return all users
+  .get(usersController.findOne)
+
 // Matches with "/api/users/:id"
 router.route("/:id")
   .get(usersController.findById)
   // delete a user from the database by DB id
   .delete(usersController.remove);
-
-router.route("/logIn")
-
 
 module.exports = router;

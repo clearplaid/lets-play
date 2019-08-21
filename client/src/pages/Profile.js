@@ -1,14 +1,12 @@
 import React from "react";
 import Chatkit from '@pusher/chatkit-client';
-import "./Profile.css";
 import RoomList from "../components/Chat/RoomList";
 import MessageList from "../components/Chat/MessageList";
 import NewRoomForm from "../components/Chat/NewRoomForm";
 import SendMessageForm from "../components/Chat/SendMessageForm";
+import API from "../utils/API";
+import "./Profile.css";
 require("dotenv").config();
-
-
-// import API from "../utils/API";
 
 class Profile extends React.Component {
   constructor(props) {
@@ -28,6 +26,15 @@ class Profile extends React.Component {
   }
 
   componentDidMount() {
+    API.getUserData()
+      .then(
+        (response) => {
+          console.log("response")
+          console.log(response.data)
+          this.setState({ userLoggedIn: response.data })
+      }
+  )
+
     const chatManager = new Chatkit.ChatManager({
         instanceLocator: "v1:us1:d763a976-7d94-4bf1-ab82-e3998634540e",
         userId: 'shannon',
@@ -124,6 +131,9 @@ class Profile extends React.Component {
             <div className="owned-games">
               <h4>Owned</h4>
               {/* owned games here  */}
+              <ul>
+                
+              </ul>
             </div>
           </div>
           <div className="col-4">
