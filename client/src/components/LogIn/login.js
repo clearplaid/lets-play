@@ -39,7 +39,7 @@ class LogIn extends Component {
           })
           // update the state to redirect to user profile
           this.setState({
-            redirectTo: '/profile/' + this.state.username
+            redirectTo: '/profile/'
           })
         }
       }).catch(error => {

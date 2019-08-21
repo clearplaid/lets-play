@@ -21,15 +21,18 @@ class App extends Component {
     super()
     this.state = {
       loggedIn: false,
-      username: ''
+      username: '',
+      userId: ''
     }
+    // localStorage.setItem("username", userObject)
   }
 
   componentDidMount() {
     this.getUser()
   }
-  updateUser = user => {
-    this.setState({ username: user })
+  updateUser = userObject => {
+    console.log(userObject)
+    this.setState(userObject)
   }
     
   getUser = () => {
@@ -41,7 +44,8 @@ class App extends Component {
         console.log(response.data.user)
         this.setState({
           loggedIn: true,
-          username: response.data.user.username
+          username: response.data.user.username,
+          userId: response.data.user._id,
         })
       } else {
         console.log('Get user: no user');
@@ -58,7 +62,7 @@ class App extends Component {
   return (
     <Router>
       <div>
-        <Nav updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
+        <Nav updateUser={this.updateUser} loggedIn={this.state.loggedIn} username={this.state.username}/>
         {/* greet user if logged in: */}
         {this.state.loggedIn &&
           <p>Join the party, {this.state.username}!</p>
@@ -73,11 +77,11 @@ class App extends Component {
           <Route exact path="/search" component={Search} />
           <Route path="/profile" render={() =>
             <Profile
-              updateUser={this.updateUser}
+              updateUser={this.updateUser} username={this.state.username}
             />} />
           <Route exact path="/guild" render={() =>
             <Guild
-              updateUser={this.updateUser}
+              updateUser={this.updateUser} username={this.state.username}
             />} />
         </Switch>
         <Footer />

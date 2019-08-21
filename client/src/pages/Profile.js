@@ -11,16 +11,17 @@ require("dotenv").config();
 // import API from "../utils/API";
 
 class Profile extends React.Component {
-  constructor() {
-    super();
-
+  constructor(props) {
+    super(props);
+    console.log(props);
     this.state = {
-      roomId: null,
+      roomId: '',
       messages: [],
       joinableRooms: [],
       joinedRooms: [],
-      
+      // username: localStorage.getItem("username", userObject)
     }
+    
     this.sendMessage = this.sendMessage.bind(this)
     this.subscribeToRoom = this.subscribeToRoom.bind(this)
     this.getRooms = this.getRooms.bind(this)
@@ -85,7 +86,7 @@ class Profile extends React.Component {
   }
 
   render() {
-    console.log(this.state.user);
+    
     return (
       <main>
         <h2 className="profileTitle"><strong>Profile</strong></h2>
@@ -94,7 +95,7 @@ class Profile extends React.Component {
             <img href="#" className="avatar" alt="avatar"></img>
             <ul>
               <li>Name</li>
-              <li>Username</li>
+              <li>{this.props.username}</li>
               <li>Email</li>
             </ul>
           </div>
