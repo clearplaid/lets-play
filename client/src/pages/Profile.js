@@ -1,6 +1,6 @@
 import React from "react";
 import ChatScreen from '../components/Chat/ChatScreen';
-import API from "../utils/API";
+// import API from "../utils/API";
 import "./Profile.css";
 require("dotenv").config();
 
@@ -15,16 +15,16 @@ class Profile extends React.Component {
     
   }
 
-  componentDidMount() {
-    API.getUserData()
-      .then(
-        (response) => {
-          console.log("response")
-          console.log(response.data)
-          this.setState({ userLoggedIn: response.data })
-      }
-  )
-    }
+  // componentDidMount() {
+  //   API.getUserData()
+  //     .then(
+  //       (response) => {
+  //         console.log("response")
+  //         console.log(response.data)
+  //         this.setState({ userLoggedIn: response.data })
+  //     }
+  // )
+  //   }
     
 
   render() {
@@ -37,7 +37,7 @@ class Profile extends React.Component {
             <img href="#" className="avatar" alt="avatar"></img>
             <ul>
               <li>Name</li>
-              <li>{this.props.username}</li>
+              <li>Username</li>
               <li>Email</li>
             </ul>
           </div>

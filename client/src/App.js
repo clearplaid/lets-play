@@ -62,17 +62,16 @@ class App extends Component {
   // }
 
   render() {
-  console.log(this.state.userId)
   return (
     <Router>
       <div>
-        <Nav updateUser={this.updateUser} loggedIn={this.state.loggedIn} username={this.state.username}/>
+        <Nav updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
         {/* greet user if logged in: */}
         {this.state.loggedIn &&
           <p>Join the party, {this.state.username}!</p>
         }
         <Switch>
-        <Route exact path="/" component={Home} />
+          <Route exact path="/" component={Home} />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/logIn" render={() =>
             <LogIn updateUser={this.updateUser} />} />

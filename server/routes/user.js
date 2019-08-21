@@ -50,7 +50,6 @@ router.post(
 router.get('/', (req, res, next) => {
     console.log('===== user!!======')
     console.log(req.user)
-    console.log(req.session)
     if (req.user) {
         res.json({ user: req.user })
     } else {

@@ -56,7 +56,7 @@ class Home extends React.Component {
                       <li>Minimum Age: {game.min_age}</li>
                       <li>Playtime: {game.min_playtime} - {game.max_playtime} minutes</li>
                     </ul>
-                  <a href="{game.url}" className="btn infoBtn btn-block mt-auto">More Info</a>
+                  <a href={game.url} className="btn infoBtn btn-block mt-auto">More Info</a>
                   </div>
               {/* end of row */}
                 </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import ChatScreen from "../components/Chat/ChatScreen"
 import "./Guild.css";
 
 class Guild extends React.Component {
@@ -6,7 +7,7 @@ class Guild extends React.Component {
     return (
       <main>
         <h2 className="guildTitle"><strong>Guild</strong></h2>
-        
+        <ChatScreen></ChatScreen>
       </main>
     )
   }
