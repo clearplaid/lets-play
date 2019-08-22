@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.017949bb.chunk.css",
+    "main.js": "/static/js/main.009b052c.chunk.js",
+    "main.js.map": "/static/js/main.009b052c.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.1f5fde3c.js",
+    "runtime~main.js.map": "/static/js/runtime~main.1f5fde3c.js.map",
+    "static/js/2.92eb5e15.chunk.js": "/static/js/2.92eb5e15.chunk.js",
+    "static/js/2.92eb5e15.chunk.js.map": "/static/js/2.92eb5e15.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.6a5ce54a3299680bcef78155429bb48e.js": "/precache-manifest.6a5ce54a3299680bcef78155429bb48e.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.017949bb.chunk.css.map": "/static/css/main.017949bb.chunk.css.map",
+    "static/media/footer.css": "/static/media/37223.fddaa133.jpg",
+    "static/media/App.css": "/static/media/stone-tile.607d87d9.jpg"
+  }
+}
