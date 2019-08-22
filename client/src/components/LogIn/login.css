@@ -2,4 +2,24 @@
   font-family: 'Rock Salt', cursive;
   color: lightgoldenrodyellow;
   margin: 2rem;
+  text-shadow: 
+        -2px -2px 0 #953f36,  
+        2px -2px 0 #953f36,
+        -2px 2px 0 #953f36,
+        2px 2px 0 #953f36;
+}
+
+.login-container {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: black;
+  opacity: .9;
+  display: block;
+  width: 20rem
+}
+.logIn-btn {
+  color: lightgoldenrodyellow;
+  background-color: #953f36;
+  width: 10rem;
+  display: block
 }

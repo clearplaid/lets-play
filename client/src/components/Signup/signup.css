@@ -1,10 +1,13 @@
 .signupForm {
   margin: 2rem;
+  background-color: black;
+  opacity: .9;
+  padding: 1rem;
 }
 
 .signupBtn {
   color: lightgoldenrodyellow;
-  background-color: #9ca27b;
+  background-color: #953f36;
 }
 
 .input {
@@ -14,4 +17,9 @@
   font-family: 'Rock Salt', cursive;
   color: lightgoldenrodyellow;
   margin: 2rem;
+  text-shadow: 
+        -2px -2px 0 #953f36,  
+        2px -2px 0 #953f36,
+        -2px 2px 0 #953f36,
+        2px 2px 0 #953f36;
 }

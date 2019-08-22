@@ -99,7 +99,7 @@ class ChatScreen extends React.Component {
       <div className="personal-chat">
             {/* input chatroom info for messaging */}
         <div className="row justify-content-around">
-          <div className="card room-card">
+          <div className="card room-card mb-3">
             <div className="card-body rooms-body">
             <RoomList
                 subscribeToRoom={this.subscribeToRoom}
@@ -111,7 +111,7 @@ class ChatScreen extends React.Component {
               <NewRoomForm createRoom={this.createRoom} />
             </div>
           </div>
-          <div className="card message-card">
+          <div className="card message-card mb-3">
             <div className="card-body message-body">
               <MessageList
                 roomId={this.state.roomId}

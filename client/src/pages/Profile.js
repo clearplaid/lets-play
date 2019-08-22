@@ -37,7 +37,7 @@ class Profile extends React.Component {
       <main>
         <h2 className="profileTitle"><strong>Profile</strong></h2>
         <div className="row justify-content-around mr-1 ml-1">
-          <div className="card member-profile">
+          <div className="card member-profile mb-3">
             <img src="https://i.pinimg.com/originals/7c/dd/cd/7cddcd3c2bf739f5e3de97bdf53be5ad.jpg" className="card-img-top avatar p-0" alt="avatar"></img>
             <div className="card-body member-info"> 
               <ul className="profile-info p-2">
@@ -48,7 +48,7 @@ class Profile extends React.Component {
             </div>
           </div>
 
-          <div className="card">
+          <div className="card mb-3">
             <div className="card-header topic">
               <h4>Owned</h4>
               </div>
@@ -62,7 +62,7 @@ class Profile extends React.Component {
             </div>
           </div>
 
-          <div className="card">
+          <div className="card mb-3">
             <div className="card-header topic">
               <h4>Wishlist</h4>
               </div>
@@ -76,7 +76,7 @@ class Profile extends React.Component {
             </div>
           </div>
 
-          <div className="card">
+          <div className="card mb-3">
             <div className="card-header topic">
               <h4>Meeples</h4>
               </div>
@@ -90,7 +90,7 @@ class Profile extends React.Component {
             </div>
           </div>
 
-          <div className="card">
+          <div className="card mb-3">
             <div className="card-header topic">
               <h4>Guilds</h4>
               </div>
