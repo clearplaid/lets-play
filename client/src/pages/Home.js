@@ -51,7 +51,7 @@ class Home extends React.Component {
                 <img src={game.images.original} className="card-img-top img-fluid img-thumbnail rounded pb-1" alt={game.name} />
                 <div className="card-body d-flex flex-column p-0">
                   <h5 className="card-title main-card-title text-center font-weight-bold pb-2">{game.name}</h5>
-                    <ul className="card-text">
+                    <ul className="card-text main-card-text">
                       <li># of players: {game.min_players} - {game.max_players}</li>
                       <li>Minimum Age: {game.min_age}</li>
                       <li>Playtime: {game.min_playtime} - {game.max_playtime} minutes</li>
@@ -67,7 +67,7 @@ class Home extends React.Component {
           <div className="col-sm-3 sidebar">     
             <center><h3 className="sidebar-title">Adventurers</h3></center>
               <div className="card sidebar-card">
-                <ul>
+                <ul className="p-2">
                   {this.state.users.map(user => (
                     <li id={user._id} key={user._id}>{user.username}</li>
                   ))}
@@ -75,7 +75,12 @@ class Home extends React.Component {
               </div>
             <center><h3 className="sidebar-title">Guilds</h3></center>
               <div className="card sidebar-card">
-                <ul>
+                <ul className="p-3">
+                  <li>random</li>
+                  <li>King of Tokyo</li>
+                  <li>Dungeon</li>
+                  <li>Meeple City</li>
+                  
                 {this.state.guilds.map(guild => (
                   <li id={guild._id} key={guild._id}>{guild.name}</li>
                   ))}

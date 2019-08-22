@@ -1,5 +1,19 @@
-img {
+.box-cover {
   width: 100%;
   height: auto;
   object-fit: cover;
+}
+
+.view {
+  background-color: #113b18;
+  padding: .25em .5em .25em .5em;
+  margin: .5em;
+  color: lightgoldenrodyellow
+}
+
+.save {
+  background-color: #953f36;
+  padding: .25em .5em .25em .5em;
+  margin: .5em;
+  color: lightgoldenrodyellow
 }

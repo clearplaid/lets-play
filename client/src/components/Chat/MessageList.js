@@ -30,7 +30,7 @@ class MessageList extends React.Component {
         console.log(this.props.messages)
         if (!this.props.roomId) {
             return (
-                <div className="message-list col-8">
+                <div className="message-list">
                     <div className="join-room">
                         &larr; Your Journey Awaits...
                     </div>
@@ -38,7 +38,7 @@ class MessageList extends React.Component {
             )
         }
         return (
-            <div ref={this.setListRef} className="message-list col-8">
+            <div ref={this.setListRef} className="message-list">
                 {this.props.messages.map((message, index) => {
                     return (
                         <Message key={message.id} username={message.senderId} text={message.text} />

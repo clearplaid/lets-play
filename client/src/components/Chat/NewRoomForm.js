@@ -23,7 +23,7 @@ class NewRoomForm extends React.Component {
     
     render () {
         return (
-            <div className="new-room-form col-4">
+            <div className="new-room-form">
                 <form onSubmit={this.handleSubmit}>
                     <input
                         value={this.state.roomName}

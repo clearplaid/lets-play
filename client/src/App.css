@@ -5,3 +5,18 @@ body {
   background-repeat: repeat;
   
 }
+
+.greeting {
+  margin: 2rem;
+  background-color: black;
+  margin: 0;
+  padding: 1rem;
+  color: #6fd46b
+}
+ul {
+  list-style-type: none;
+}
+
+li {
+line-height: 2;
+}

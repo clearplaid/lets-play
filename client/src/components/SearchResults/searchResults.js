@@ -66,13 +66,13 @@ class SearchResults extends React.Component {
                 {(this.props.thumbnail) ? <img src={
                     // if thumbnail exists on this.props.img use that else leave src empty
                     (this.props.thumbnail) ? this.props.image : ""
-              } alt="box cover" className="img-fluid p-4" /> : null}
-              <ul className="card-text"><small className="text-muted">
+              } alt="box cover" className="img-fluid p-4 box-cover" /> : null}
+              <ul className="card-text game-info pl-5"><small className="text-muted">
                       <li># of players: {this.props.min_players} - {this.props.max_players}</li>
                       <li>Minimum Age: {this.props.min_age}</li>
                       <li>Playtime: {this.props.min_playtime} - {this.props.max_playtime} minutes</li></small>
               </ul>
-              <div className="btnDiv mt-auto p-4">
+              <div className="btnDiv justify-content-center mt-auto p-4">
                   {// if link to book exists include View button else do not
                     (this.props.link) ? <a href={this.props.link}><button type="button" name="view" className="view">View</button></a> : null
                   }

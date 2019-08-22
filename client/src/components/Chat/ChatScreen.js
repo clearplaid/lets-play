@@ -96,27 +96,36 @@ class ChatScreen extends React.Component {
   render() {
     
     return (
-      
-        <div className="personal-chat">
+      <div className="personal-chat">
             {/* input chatroom info for messaging */}
-            <div className="row">
-              <RoomList
+        <div className="row justify-content-around">
+          <div className="card room-card">
+            <div className="card-body rooms-body">
+            <RoomList
                 subscribeToRoom={this.subscribeToRoom}
                 rooms={[...this.state.joinableRooms, ...this.state.joinedRooms]}
                 roomId={this.state.roomId}
-                />
+              />
+            </div>
+            <div className="card-footer room-footer">
+              <NewRoomForm createRoom={this.createRoom} />
+            </div>
+          </div>
+          <div className="card message-card">
+            <div className="card-body message-body">
               <MessageList
                 roomId={this.state.roomId}
                 messages={this.state.messages} />
             </div>
-            <div className="row">
-              <NewRoomForm createRoom={this.createRoom} />
+            <div className="card-footer message-footer">
               <SendMessageForm
                 disabled={!this.state.roomId}
                 sendMessage={this.sendMessage}
-            />
+              />
+              </div>
             </div>
         </div>
+      </div>
     )
   }
           

@@ -4,3 +4,34 @@
   margin: 2rem;
 
 }
+
+.profile-info {
+  background-color: #113b18;
+  color: lightgoldenrodyellow;
+}
+.member-info {
+  background-color: #113b18;
+  border: 5px solid black
+}
+
+.member-profile {
+  width: 18rem;
+}
+
+.topic-lists {
+  background-color: black;
+  border: 0;
+  color: #953f36
+}
+
+.card {
+  opacity: .9;
+  border: 0
+}
+.avatar {
+  border: 0;
+}
+.topic {
+  background-color: #953f36;
+  color: lightgoldenrodyellow;
+}

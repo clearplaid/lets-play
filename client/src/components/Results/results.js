@@ -6,7 +6,7 @@ function Results(props) {
   if(props.path === "/search") {
     return(
         <div id="results">
-            <h3>Adventure Results:</h3>
+            <h3 className="result-title">Adventure Results:</h3>
             {props.gameData.map((game) => {
               return <SearchResults
                 id={game.id}
@@ -32,7 +32,7 @@ function Results(props) {
     if(props.savedGames.length > 0) {
         return(
             <div id="results">
-                <h3>Saved Games:</h3>
+                <h3 className="result-title">Saved Games:</h3>
             {props.savedGames.map((game) => {
               return <SearchResults
                 id={game._id}
@@ -57,7 +57,7 @@ function Results(props) {
     } else {
         return(
             <div id="results">
-                <h3>Saved Games</h3>
+                <h3 className="result-title">Saved Games</h3>
                 <p>Nothing to see here...yet!</p>
             </div>
         );
