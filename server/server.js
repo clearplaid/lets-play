@@ -46,7 +46,8 @@ app.use('/user', user)
 app.use(routes);
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/gamerdb", { useNewUrlParser: true }).then(
+// "mongodb://localhost:27017/gamerdb"
+mongoose.connect(process.env.MONGODB_URI || "mongodb://user:passw0rd@ds211718.mlab.com:11718/heroku_ldhfq6qc", { useNewUrlParser: true }).then(
   () => { 
       /** ready to use. The `mongoose.connect()` promise resolves to undefined. */ 
       console.log('Connected to Mongo');
