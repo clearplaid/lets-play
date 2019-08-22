@@ -4,12 +4,13 @@ import RoomList from "./RoomList";
 import MessageList from "./MessageList";
 import NewRoomForm from "./NewRoomForm";
 import SendMessageForm from "./SendMessageForm";
+import "./ChatScreen.css"
 require("dotenv").config();
 
-class Profile extends React.Component {
+class ChatScreen extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props);
+    
     this.state = {
       roomId: '',
       messages: [],
@@ -21,13 +22,14 @@ class Profile extends React.Component {
     this.sendMessage = this.sendMessage.bind(this)
     this.subscribeToRoom = this.subscribeToRoom.bind(this)
     this.getRooms = this.getRooms.bind(this)
+    this.createRoom = this.createRoom.bind(this)
   }
 
   componentDidMount() {
 
     const chatManager = new Chatkit.ChatManager({
         instanceLocator: "v1:us1:d763a976-7d94-4bf1-ab82-e3998634540e",
-        userId: 'shannon',
+        userId: '5d5d5d9d61049e4e597c46ff',
         tokenProvider: new Chatkit.TokenProvider({
             url: "https://us1.pusherplatform.io/services/chatkit_token_provider/v1/d763a976-7d94-4bf1-ab82-e3998634540e/token"
         })
@@ -36,6 +38,7 @@ class Profile extends React.Component {
     chatManager
       .connect()
       .then(currentUser => {
+        console.log(currentUser)
         this.currentUser = currentUser
         this.getRooms()
       })
@@ -59,7 +62,7 @@ class Profile extends React.Component {
       roomId: roomId,
       messageLimit: 100,
       hooks: {
-          onNewMessage: message => {
+          onMessage: message => {
               this.setState({
                   messages: [...this.state.messages, message]
               })
@@ -78,26 +81,45 @@ class Profile extends React.Component {
   sendMessage(text) {
     this.currentUser.sendMessage({
       text,
-      roomId: "25ab793b-4cc9-4ad8-ae7f-f74ca5265508"
+      roomId: this.state.roomId
     })
   }
+
+  createRoom(name) {
+    this.currentUser.createRoom({
+        name
+    })
+    .then(room => this.subscribeToRoom(room.id))
+    .catch(err => console.log('error with createRoom: ', err))
+}
 
   render() {
     
     return (
       
-            <div className="personal-chat">
-              {/* input chatroom info for messaging */}
+        <div className="personal-chat">
+            {/* input chatroom info for messaging */}
+            <div className="row">
               <RoomList
                 subscribeToRoom={this.subscribeToRoom}
-                rooms={[...this.state.joinableRooms, ...this.state.joinedRooms]} />
-              <MessageList messages={this.state.messages} />
-              <SendMessageForm sendMessage={this.sendMessage} />
-              <NewRoomForm />
+                rooms={[...this.state.joinableRooms, ...this.state.joinedRooms]}
+                roomId={this.state.roomId}
+                />
+              <MessageList
+                roomId={this.state.roomId}
+                messages={this.state.messages} />
             </div>
+            <div className="row">
+              <NewRoomForm createRoom={this.createRoom} />
+              <SendMessageForm
+                disabled={!this.state.roomId}
+                sendMessage={this.sendMessage}
+            />
+            </div>
+        </div>
     )
   }
           
 }
 
-export default Profile;
+export default ChatScreen;

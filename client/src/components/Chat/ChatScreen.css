@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Rock Salt', cursive;
+  color: black;
+  margin: 0;
+}
+
+.personal-chat {
+  margin: 3rem;
+  height: 100%;
+}
+
+.rooms-list {
+  
+  padding: 10px;
+  display: flex;
+  background-color:#113b18;
+  /* overflow: scroll; */
+  height: 100%;
+}
+
+.rooms-list ul {
+  list-style-type: none;    
+  padding: 0;
+  /* overflow: scroll; */
+}
+
+.rooms-list li {
+  margin: 10px 0;
+}
+
+.rooms-list h3 {
+  margin: 5px 0;
+  color: white;
+}
+
+.rooms-list .room a {
+  color: lightgoldenrodyellow;
+  font-weight: 600;
+  text-decoration: none;
+  
+}
+
+.rooms-list .room.active a {
+  color: darkgoldenrod;
+}
+
+.new-room-form {
+  padding: 0 5px;
+  background: #282f33;
+  color: lightgoldenrodyellow;
+}
+
+.new-room-form form {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.new-room-form input {
+  background: #282f33;
+}
+
+.new-room-form button {
+  background: #282f33;
+  color: lightgoldenrodyellow;
+  border: 0;
+} 
+
+.new-room-form input::placeholder {
+  color: lightgoldenrodyellow;
+  font-weight: 200;
+}
+
+.new-room-form input:focus {
+  outline-width: 0;
+}
+
+.new-room-form input {
+  color: lightgoldenrodyellow;
+  border: 0;
+}
+
+.new-room-form button {
+  border: 0;
+}
+
+.message .message-username {
+  font-size: 11px;
+  color: lightgoldenrodyellow;
+  /* opacity: 0.9; */
+  margin-bottom: 6px;
+}
+.message .message-text {
+  color: black;
+  display: inline;
+  padding: 4px 8px;
+  border-radius: 8px;
+}
+
+.message-list {
+  padding-left: 6px;
+  width: 100%;
+  height: 20%;
+  overflow: scroll;
+  background:#953f36;
+}
+
+.message-list .join-room {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 34px;
+  font-weight: 300;
+}
+
+.send-message-form {
+  background: gray;
+  display: flex;
+}
+
+.send-message-form input {
+  width: 100%;
+  padding: 15px 10px;
+  margin: 0;
+  border-style: none;
+  background: gray;
+  font-weight: 200;
+
+}
+
+.send-message-form input:focus {
+  outline-width: 0;
+}
+
+.send-message-form input::placeholder {
+  color: lightgoldenrodyellow;
+}

@@ -78,11 +78,11 @@ class App extends Component {
           <Route exact path="/search" component={Search} />
           <Route path="/profile" render={() =>
             <Profile
-              updateUser={this.updateUser} username={this.state.username}
+              updateUser={this.updateUser} username={this.state.username} userId={this.state.userId}
             />} />
           <Route exact path="/guild" render={() =>
             <Guild
-              updateUser={this.updateUser} username={this.state.username}
+              updateUser={this.updateUser} username={this.state.username} userId={this.state.userId}
             />} />
         </Switch>
         <Footer />
